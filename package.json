@@ -10,15 +10,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
     "reinstall": "rm -rf node_modules && npm install",
-    "ci-check": "npm run lint && npm run tsc && npm run test",
-    "lint": "eslint ./src --ext .js,.jsx,.ts,.tsx",
-    "tsc": "tsc -p ./ --noEmit",
-    "tsc:watch": "tsc -p ./ --noEmit -w",
-    "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "storybook": "start-storybook -c ./.storybook/ -p 9009 -s public",
+    "build-storybook": "build-storybook -c -c ./.storybook/ -s public"
   },
   "dependencies": {
     "@lagunovsky/redux-react-router": "2.2.0",
@@ -45,16 +39,18 @@
     "rxjs": "6.5.3",
     "tslib": "2.4.0",
     "typesafe-actions": "5.1.0",
-    "utility-types": "3.10.0"
+    "utility-types": "3.10.0",
+    "webpack-manifest-plugin": "^3.0.0"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "5.2.5",
-    "@storybook/addon-links": "5.2.5",
-    "@storybook/addon-storyshots": "5.2.5",
-    "@storybook/addons": "5.2.5",
-    "@storybook/react": "5.2.5",
+    "@storybook/addon-actions": "^7.6.3",
+    "@storybook/addon-links": "^7.6.3",
+    "@storybook/addon-storyshots": "^7.6.3",
+    "@storybook/addons": "^7.6.3",
+    "@storybook/react": "^7.6.3",
     "@typescript-eslint/eslint-plugin": "5.22.0",
     "@typescript-eslint/parser": "5.22.0",
+    "babel-loader": "^8.3.0",
     "eslint": "8.14.0",
     "eslint-config-prettier": "8.5.0",
     "require-context.macro": "1.2.2",
